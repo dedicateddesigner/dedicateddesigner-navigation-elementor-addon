@@ -4,7 +4,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if ( class_exists( '\Elementor\Widget_Base' ) && ! class_exists( 'DedicatedDesigner_Navigation_Widget' ) ) {
 class DedicatedDesigner_Navigation_Widget extends \Elementor\Widget_Base {
 
     public function get_name() {
@@ -647,5 +646,4 @@ class DedicatedDesigner_Navigation_Widget extends \Elementor\Widget_Base {
         </header>
         <?php
     }
-}
 }

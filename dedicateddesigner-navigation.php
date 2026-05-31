@@ -15,13 +15,15 @@ if (!defined('ABSPATH')) {
 if ( ! function_exists( 'dedicateddesigner_register_widgets' ) ) {
     function dedicateddesigner_register_widgets($widgets_manager){
 
+        if ( ! class_exists( 'Elementor\Widget_Base' ) ) {
+            return;
+        }
+
         require_once plugin_dir_path(__FILE__) . 'widget/navigation-widget.php';
 
-        if ( class_exists( 'DedicatedDesigner_Navigation_Widget' ) ) {
-            $widgets_manager->register(
-                new \DedicatedDesigner_Navigation_Widget()
-            );
-        }
+        $widgets_manager->register(
+            new \DedicatedDesigner_Navigation_Widget()
+        );
 
     }
 
