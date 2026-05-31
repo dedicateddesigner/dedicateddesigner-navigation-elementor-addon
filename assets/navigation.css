@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--dedicateddesigner-nav-height, 80px);
+}
+
 /* Base Navigation Wrapper */
 .dedicateddesigner-navigation-wrapper {
     position: relative; /* Sit inside container naturally by default */

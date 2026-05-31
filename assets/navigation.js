@@ -12,6 +12,13 @@
         var $closeBtn = $wrapper.find('.dedicateddesigner-drawer-close');
         var $overlay = $wrapper.find('.dedicateddesigner-drawer-overlay');
 
+        var resizeEventName = 'resize.dedicateddesigner_nav_' + widgetId;
+
+        function updateNavHeight() {
+            var navHeight = $wrapper.outerHeight();
+            document.documentElement.style.setProperty('--dedicateddesigner-nav-height', navHeight + 'px');
+        }
+
         function handleScroll() {
             var scrollPos = $(window).scrollTop();
             if (scrollPos > 50) {
@@ -19,13 +26,15 @@
             } else {
                 $wrapper.removeClass('dedicateddesigner-scrolled');
             }
+            updateNavHeight();
         }
 
-        // Run immediately to check initial scroll position on page load
+        // Run immediately to check initial scroll position and height on page load
         handleScroll();
 
-        // Bind scroll event with unique namespace to prevent listener duplication
+        // Bind scroll and resize events with unique namespaces
         $(window).off(scrollEventName).on(scrollEventName, handleScroll);
+        $(window).off(resizeEventName).on(resizeEventName, updateNavHeight);
 
         // Open Mobile Drawer
         $toggleBtn.off('click').on('click', function (e) {
@@ -47,6 +56,7 @@
         // Clean up events when the widget is reloaded/destroyed in the editor
         $scope.on('destroy', function () {
             $(window).off(scrollEventName);
+            $(window).off(resizeEventName);
             $('body').removeClass('dedicateddesigner-body-menu-open');
         });
     };
