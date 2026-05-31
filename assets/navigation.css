@@ -23,6 +23,16 @@
     width: 100%;
 }
 
+/* Offset for WordPress Admin Bar when header is sticky */
+.admin-bar .dedicateddesigner-sticky-yes .dedicateddesigner-navigation-wrapper {
+    top: 32px;
+}
+@media screen and (max-width: 782px) {
+    .admin-bar .dedicateddesigner-sticky-yes .dedicateddesigner-navigation-wrapper {
+        top: 46px;
+    }
+}
+
 /* Scrolled Background State */
 .dedicateddesigner-navigation-wrapper.dedicateddesigner-scrolled {
     background-color: var(--dedicateddesigner-scrolled-bg, #0b2c5c) !important;
@@ -36,7 +46,7 @@
     justify-content: space-between;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 16px 16px;
+    padding: 12px 16px;
     box-sizing: border-box;
     width: 100%;
     transition: padding 0.4s ease;
@@ -44,8 +54,8 @@
 
 /* Shrink header slightly on scroll for a premium feel */
 .dedicateddesigner-scrolled .dedicateddesigner-header-container {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 /* Logo Alignment */
