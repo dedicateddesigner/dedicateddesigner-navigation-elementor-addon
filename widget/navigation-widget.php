@@ -201,8 +201,8 @@ class DedicatedDesigner_Navigation_Widget extends \Elementor\Widget_Base {
                 'type'  => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default' => [
-                    'top' => '20',
-                    'bottom' => '20',
+                    'top' => '0',
+                    'bottom' => '0',
                     'left' => '20',
                     'right' => '20',
                     'unit' => 'px',
@@ -250,6 +250,52 @@ class DedicatedDesigner_Navigation_Widget extends \Elementor\Widget_Base {
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .dedicateddesigner-logo-img' => 'max-height: {{SIZE}}px;',
+                ],
+            ]
+        );
+
+        // Logo Width
+        $this->add_responsive_control(
+            'logo_width',
+            [
+                'label' => __('Logo Width', 'dedicateddesigner-navigation'),
+                'type'  => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+                'range' => [
+                    'px' => [
+                        'min' => 10,
+                        'max' => 1000,
+                    ],
+                    '%' => [
+                        'min' => 1,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .dedicateddesigner-logo-img' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        // Logo Height
+        $this->add_responsive_control(
+            'logo_height',
+            [
+                'label' => __('Logo Height', 'dedicateddesigner-navigation'),
+                'type'  => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
+                'range' => [
+                    'px' => [
+                        'min' => 10,
+                        'max' => 1000,
+                    ],
+                    '%' => [
+                        'min' => 1,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .dedicateddesigner-logo-img' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
