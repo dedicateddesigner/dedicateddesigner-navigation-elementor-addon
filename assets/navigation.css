@@ -51,7 +51,7 @@ html {
     justify-content: space-between;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 12px 16px;
+    padding: 0px 20px;
     box-sizing: border-box;
     width: 100%;
     transition: padding 0.4s ease;
@@ -59,8 +59,7 @@ html {
 
 /* Shrink header slightly on scroll for a premium feel */
 .dedicateddesigner-scrolled .dedicateddesigner-header-container {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 8px 0 !important;
 }
 
 /* Logo Alignment */
@@ -421,12 +420,35 @@ html {
     transition: color 0.3s ease;
 }
 
+.dedicateddesigner-mobile-menu-container ul.dedicateddesigner-mobile-menu li.menu-item-has-children > a {
+    position: relative;
+    padding-right: 24px !important;
+}
+
+.dedicateddesigner-mobile-menu-container ul.dedicateddesigner-mobile-menu li.menu-item-has-children > a::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+    transition: transform 0.3s ease;
+}
+
+.dedicateddesigner-mobile-menu-container ul.dedicateddesigner-mobile-menu li.menu-item-has-children.active-submenu > a::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
 /* Mobile Dropdown sub-menu */
 .dedicateddesigner-mobile-menu-container ul.dedicateddesigner-mobile-menu li.menu-item-has-children ul.sub-menu {
     list-style: none;
     padding: 8px 0 0 16px;
     margin: 0;
-    display: flex;
+    display: none; /* Hide by default on mobile */
     flex-direction: column;
     gap: 12px;
     border-left: 1px solid rgba(255, 255, 255, 0.1);

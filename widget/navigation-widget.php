@@ -203,8 +203,8 @@ class DedicatedDesigner_Navigation_Widget extends \Elementor\Widget_Base {
                 'default' => [
                     'top' => '20',
                     'bottom' => '20',
-                    'left' => '0',
-                    'right' => '0',
+                    'left' => '20',
+                    'right' => '20',
                     'unit' => 'px',
                 ],
                 'selectors' => [
@@ -392,7 +392,7 @@ class DedicatedDesigner_Navigation_Widget extends \Elementor\Widget_Base {
             [
                 'label'     => __('Text Hover Color', 'dedicateddesigner-navigation'),
                 'type'      => \Elementor\Controls_Manager::COLOR,
-                'default'   => '#ffffff',
+                'default'   => '#005bb5',
                 'selectors' => [
                     '{{WRAPPER}} .dedicateddesigner-register-btn:hover' => 'color: {{VALUE}};',
                 ],
@@ -405,7 +405,7 @@ class DedicatedDesigner_Navigation_Widget extends \Elementor\Widget_Base {
             [
                 'label'     => __('Background Hover Color', 'dedicateddesigner-navigation'),
                 'type'      => \Elementor\Controls_Manager::COLOR,
-                'default'   => '#005bb5',
+                'default'   => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} .dedicateddesigner-register-btn:hover' => 'background-color: {{VALUE}};',
                 ],

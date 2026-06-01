@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Dedicateddesigner-navigation
  * Description: Dedicateddesigner Navigation Widget
- * Version: 1.4.6
+ * Version: 1.4.7
  * Author: Sunill Sharma
  */
 
@@ -37,14 +37,14 @@ if ( ! function_exists( 'dedicateddesigner_register_assets' ) ) {
             'dedicateddesigner-navigation-css',
             plugin_dir_url(__FILE__) . 'assets/navigation.css',
             [],
-            '1.4.6'
+            '1.4.7'
         );
 
         wp_register_script(
             'dedicateddesigner-navigation-js',
             plugin_dir_url(__FILE__) . 'assets/navigation.js',
             [ 'jquery', 'elementor-frontend' ],
-            '1.4.6',
+            '1.4.7',
             true
         );
 

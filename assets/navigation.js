@@ -53,6 +53,22 @@
         $closeBtn.off('click').on('click', closeDrawer);
         $overlay.off('click').on('click', closeDrawer);
 
+        // Toggle mobile sub-menus on parent link click
+        $wrapper.find('.dedicateddesigner-mobile-menu li.menu-item-has-children > a').off('click').on('click', function (e) {
+            e.preventDefault();
+            var $parentLi = $(this).parent('li');
+            $parentLi.toggleClass('active-submenu');
+            $parentLi.find('> ul.sub-menu').slideToggle(300);
+        });
+
+        // Close mobile drawer when any link is clicked, unless it is a submenu parent item toggle
+        $wrapper.find('.dedicateddesigner-mobile-drawer a').off('click').on('click', function (e) {
+            if ($(this).parent().hasClass('menu-item-has-children')) {
+                return;
+            }
+            closeDrawer();
+        });
+
         // Clean up events when the widget is reloaded/destroyed in the editor
         $scope.on('destroy', function () {
             $(window).off(scrollEventName);
